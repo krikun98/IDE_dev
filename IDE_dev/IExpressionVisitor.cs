@@ -9,7 +9,7 @@ namespace IDE_dev
         void Visit(BinaryExpression expression);
         void Visit(ParenExpression expression);
     }
-    
+
     public class DumpVisitor : IExpressionVisitor
     {
         private readonly StringBuilder myBuilder;
