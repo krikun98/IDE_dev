@@ -1,0 +1,1 @@
+﻿Homework for master's degree IDE development course
