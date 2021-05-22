@@ -1,4 +1,4 @@
-﻿grammar Pascal;
+﻿lexer grammar Pascal;
 
 Symbol : Letter | Decimal | Hex;
 
