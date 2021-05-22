@@ -1,11 +1,5 @@
 ﻿lexer grammar Pascal;
 
-Symbol : Letter | Decimal | Hex;
-
-fragment Letter : [a-zA-Z];
-fragment Decimal : [0-9];
-fragment Hex : [0-9A-Fa-f];
-
 Comment: SingleLineComment | MultiLineComment;
 fragment SingleLineComment : '//' ~[\n\r]*;
 fragment MultiLineComment : '{' NestedComment '}' | '(*' NestedComment '*)';
@@ -53,6 +47,12 @@ fragment StringCharacter : ~['\n] | QUOTE QUOTE;
 fragment QUOTE : '\'';
 fragment ControlString : (HASH UnsignedInteger)+;
 fragment HASH : '#';
+
+Symbol : Letter | Decimal | Hex;
+
+fragment Letter : [a-zA-Z];
+fragment Decimal : [0-9];
+fragment Hex : [0-9A-Fa-f];
 
 Whitespace: [ \n\t\r]+;
 SEMICOLON: ';';
