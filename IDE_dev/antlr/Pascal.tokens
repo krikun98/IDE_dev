@@ -1,8 +1,8 @@
-Symbol=1
-Comment=2
-Identifier=3
-Number=4
-CharacterString=5
+Comment=1
+Identifier=2
+Number=3
+CharacterString=4
+Symbol=5
 Whitespace=6
 SEMICOLON=7
 LBRC=8
