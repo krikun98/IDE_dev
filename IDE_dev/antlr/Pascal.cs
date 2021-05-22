@@ -65,7 +65,7 @@ public partial class Pascal : Lexer {
 
 	private static readonly string[] _LiteralNames = {
 		null, null, null, null, null, null, null, "';'", "'('", "')'", "'.'", 
-		"'+'"
+		"'='"
 	};
 	private static readonly string[] _SymbolicNames = {
 		null, "Comment", "Identifier", "Number", "CharacterString", "Symbol", 
@@ -321,7 +321,7 @@ public partial class Pascal : Lexer {
 		'\x107', 'N', '\x3', '\x2', '\x2', '\x2', '\x108', '\x109', '\a', '+', 
 		'\x2', '\x2', '\x109', 'P', '\x3', '\x2', '\x2', '\x2', '\x10A', '\x10B', 
 		'\a', '\x30', '\x2', '\x2', '\x10B', 'R', '\x3', '\x2', '\x2', '\x2', 
-		'\x10C', '\x10D', '\a', '-', '\x2', '\x2', '\x10D', 'T', '\x3', '\x2', 
+		'\x10C', '\x10D', '\a', '?', '\x2', '\x2', '\x10D', 'T', '\x3', '\x2', 
 		'\x2', '\x2', '\x10E', '\x110', '\v', '\x2', '\x2', '\x2', '\x10F', '\x10E', 
 		'\x3', '\x2', '\x2', '\x2', '\x110', '\x111', '\x3', '\x2', '\x2', '\x2', 
 		'\x111', '\x112', '\x3', '\x2', '\x2', '\x2', '\x111', '\x10F', '\x3', 
