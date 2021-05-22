@@ -11,7 +11,7 @@ fragment SingleLineComment : '//' ~[\n\r]*;
 fragment MultiLineComment : '{' NestedComment '}' | '(*' NestedComment '*)';
 fragment NestedComment : (MultiLineComment | .)*?;
 
-Identifier : (Letter | UNDERSCORE) (Letter | Decimal | UNDERSCORE){0,126};
+Identifier : (Letter | UNDERSCORE) (Letter | Decimal | UNDERSCORE)*;
 
 fragment UNDERSCORE : '_';
 
