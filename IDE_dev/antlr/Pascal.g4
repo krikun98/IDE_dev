@@ -59,4 +59,5 @@ SEMICOLON: ';';
 LBRC: '(';
 RBRC: ')';
 DOT: '.';
+EQL : '+';
 Error: .+?;
