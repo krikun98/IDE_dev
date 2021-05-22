@@ -53,3 +53,10 @@ fragment StringCharacter : ~['\n] | QUOTE QUOTE;
 fragment QUOTE : '\'';
 fragment ControlString : (HASH UnsignedInteger)+;
 fragment HASH : '#';
+
+Whitespace: [ \n\t\r]+;
+SEMICOLON: ';';
+LBRC: '(';
+RBRC: ')';
+DOT: '.';
+Error: .+?;
