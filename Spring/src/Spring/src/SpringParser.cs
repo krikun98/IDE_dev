@@ -20,6 +20,7 @@ using JetBrains.ReSharper.Psi.Parsing;
 using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.ReSharper.Psi.TreeBuilder;
 using JetBrains.Text;
+using Antlr4.Runtime;
 
 namespace JetBrains.ReSharper.Plugins.Spring
 {
@@ -49,27 +50,11 @@ namespace JetBrains.ReSharper.Plugins.Spring
 
         private void ParseBlock(PsiBuilder builder)
         {
-            while (!builder.Eof())
-            {
-                var tt = builder.GetTokenType();
-                if (tt == CSharpTokenType.LBRACE)
-                {
-                    var start = builder.Mark();
-                    builder.AdvanceLexer();
-                    ParseBlock(builder);
-
-                    if (builder.GetTokenType() != CSharpTokenType.RBRACE)
-                        builder.Error("Expected '}'");
-                    else
-                        builder.AdvanceLexer();
-                    
-                    builder.Done(start, SpringCompositeNodeType.BLOCK, null);
-                }
-                else if (tt == CSharpTokenType.RBRACE)
-                    return;
-                else builder.AdvanceLexer();
-                
-            }
+            var parser = new PascalParser(new CommonTokenStream(
+                new PascalLexer(new AntlrInputStream(myLexer.Buffer.GetText()))));
+            parser.AddParseListener(new SpringParserListener(builder));
+            parser.AddErrorListener(new SpringErrorListener(builder));
+            parser.program();
         }
     }
 
