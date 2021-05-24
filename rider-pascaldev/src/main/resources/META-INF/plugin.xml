@@ -1,0 +1,25 @@
+<idea-plugin>
+  <name>Pascal Support</name>
+  <id>com.jetbrains.rider.pascaldev</id>
+  <vendor url="https://jetbrains.com">JetBrains</vendor>
+  <description>Pascal language support plugin for JetBrains Rider.</description>
+
+  <version>0.9999</version>
+  <idea-version since-build="171.3655" />
+
+  <depends>com.intellij.modules.rider</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <fileType name="PascalDev" language="PascalDev" extensions="pascaldev" implementationClass="com.jetbrains.rider.ideaInterop.fileTypes.pascaldev.PascalDevFileType" />
+    <lang.ast.factory language="PascalDev" implementationClass="com.jetbrains.rider.ideaInterop.fileTypes.pascaldev.PascalDevAstFactory" />
+    <lang.parserDefinition language="PascalDev" implementationClass="com.jetbrains.rider.ideaInterop.fileTypes.pascaldev.PascalDevParserDefinition" />
+
+    <lang.altEnter language="PascalDev" implementationClass="com.jetbrains.rider.intentions.altEnter.ReSharperBulbMenuModelFactory" />
+    <lang.syntaxHighlighterFactory language="PascalDev" implementationClass="com.jetbrains.rider.ideaInterop.fileTypes.pascaldev.PascalDevHighlighterProvider"/>
+    <backend.markup.adapterFactory language="PascalDev" implementationClass="com.jetbrains.rdclient.daemon.FrontendMarkupAdapterFactory" />
+    <backend.actions.support language="PascalDev" implementationClass="com.jetbrains.rider.actions.RiderActionSupportPolicy" />
+  </extensions>
+
+  <actions>
+  </actions>
+
+</idea-plugin>

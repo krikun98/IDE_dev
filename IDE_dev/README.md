@@ -23,18 +23,18 @@ Pascal operator and expression lexer and parser
 1. Install SDK and prepare backend plugin build using Gradle
     * if using IntelliJ IDEA:
 
-      Open the `rider-spring` project in IntelliJ IDEA. When suggested to import Gradle projects, accept the suggestion: Gradle will download Rider SDK and set up all necessary dependencies. `rider-spring` uses the [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin) Gradle plugin that downloads the IntelliJ Platform SDK, packs the plugin and installs it into a sandboxed IDE or its test shell, which allows testing the plugin in a separate environment.
+      Open the `rider-pascaldev` project in IntelliJ IDEA. When suggested to import Gradle projects, accept the suggestion: Gradle will download Rider SDK and set up all necessary dependencies. `rider-pascaldev` uses the [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin) Gradle plugin that downloads the IntelliJ Platform SDK, packs the plugin and installs it into a sandboxed IDE or its test shell, which allows testing the plugin in a separate environment.
 
-      Open the *Gradle* tool window in IntelliJ IDEA (*View | Tool Windows | Gradle*), and execute the `rider-spring/prepare` task.
+      Open the *Gradle* tool window in IntelliJ IDEA (*View | Tool Windows | Gradle*), and execute the `rider-pascaldev/prepare` task.
 
     * if using Gradle command line:
 
         ```
-        $ cd ./rider-spring
+        $ cd ./rider-pascaldev
         $ ./gradlew prepare
         ```
 
-2. Open `Spring.sln` solution and build using the `Debug` configuration. The output assemblies are later copied to the frontend plugin directories by Gradle. (If you're seeing build errors in Rider, choose *File | Settings | Build, Execution, Deployment | Toolset and Build*, and in the *Use MSBuild version* drop-down, make sure that Rider uses MSBuild shipped with .NET Core SDK.)
+2. Open `PascalDev.sln` solution and build using the `Debug` configuration. The output assemblies are later copied to the frontend plugin directories by Gradle. (If you're seeing build errors in Rider, choose *File | Settings | Build, Execution, Deployment | Toolset and Build*, and in the *Use MSBuild version* drop-down, make sure that Rider uses MSBuild shipped with .NET Core SDK.)
 
 3. Launch Rider with the plugin installed
 
@@ -50,7 +50,7 @@ Pascal operator and expression lexer and parser
 
 ### Installing to an existing Rider instance
 
-1. Build the `Debug` configuration in `Spring.sln`.
+1. Build the `Debug` configuration in `PascalDev.sln`.
 2. Execute the `buildPlugin` Gradle task.
-3. Install the plugin (`rider-spring/build/distributions/*.zip`) to your Rider installation [from disk](https://www.jetbrains.com/help/idea/installing-a-plugin-from-the-disk.html).
+3. Install the plugin (`rider-pascaldev/build/distributions/*.zip`) to your Rider installation [from disk](https://www.jetbrains.com/help/idea/installing-a-plugin-from-the-disk.html).
 
