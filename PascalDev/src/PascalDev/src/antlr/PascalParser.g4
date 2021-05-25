@@ -48,8 +48,8 @@ factor: LBRC expression RBRC
       | valueTypecast;
 
       
-setConstructor: LBKT element (COMMA element)* RBKT |
-    LBKT2 element (COMMA element)* RBKT2 ;
+setConstructor: LBKT (element (COMMA element)*)? RBKT |
+    LBKT2 (element (COMMA element)*)? RBKT2 ;
 element: expression (DOTS expression)?;
 
 procedureStatement: identifier actualParameterList?;
