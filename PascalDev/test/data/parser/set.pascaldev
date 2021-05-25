@@ -21,5 +21,5 @@ begin
    else
       writeln('is not contained in');
  
-end.
+end
 

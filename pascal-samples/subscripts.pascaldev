@@ -6,4 +6,4 @@ begin
   for j := startSubscript to endSubscript do 
      write (a[j]);
   writeln
-end.
+end

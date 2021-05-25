@@ -6,4 +6,4 @@ begin
    writeln('i=', i, '  j=', j, '  k=', k);
    procA;
    procB;
-end.
+end
