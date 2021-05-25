@@ -38,53 +38,11 @@ public interface IPascalParserVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitProgram([NotNull] PascalParser.ProgramContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.compoundStatement"/>.
+	/// Visit a parse tree produced by <see cref="PascalParser.identifier"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitCompoundStatement([NotNull] PascalParser.CompoundStatementContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitStatement([NotNull] PascalParser.StatementContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.body"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitBody([NotNull] PascalParser.BodyContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.simpleStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitSimpleStatement([NotNull] PascalParser.SimpleStatementContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.assigmnentStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitAssigmnentStatement([NotNull] PascalParser.AssigmnentStatementContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.assignment"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitAssignment([NotNull] PascalParser.AssignmentContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.procedureStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitProcedureStatement([NotNull] PascalParser.ProcedureStatementContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.gotoStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitGotoStatement([NotNull] PascalParser.GotoStatementContext context);
+	Result VisitIdentifier([NotNull] PascalParser.IdentifierContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="PascalParser.label"/>.
 	/// </summary>
@@ -92,11 +50,125 @@ public interface IPascalParserVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitLabel([NotNull] PascalParser.LabelContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitStatement([NotNull] PascalParser.StatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.unlabelledStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitUnlabelledStatement([NotNull] PascalParser.UnlabelledStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.simpleStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSimpleStatement([NotNull] PascalParser.SimpleStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.assignmentStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAssignmentStatement([NotNull] PascalParser.AssignmentStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.assignment"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAssignment([NotNull] PascalParser.AssignmentContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.variable"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitVariable([NotNull] PascalParser.VariableContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitExpression([NotNull] PascalParser.ExpressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.simpleExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSimpleExpression([NotNull] PascalParser.SimpleExpressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.term"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitTerm([NotNull] PascalParser.TermContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.factor"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitFactor([NotNull] PascalParser.FactorContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.setConstructor"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSetConstructor([NotNull] PascalParser.SetConstructorContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.element"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitElement([NotNull] PascalParser.ElementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.procedureStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitProcedureStatement([NotNull] PascalParser.ProcedureStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.functionCall"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitFunctionCall([NotNull] PascalParser.FunctionCallContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.actualParameterList"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitActualParameterList([NotNull] PascalParser.ActualParameterListContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.gotoStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitGotoStatement([NotNull] PascalParser.GotoStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.emptyStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitEmptyStatement([NotNull] PascalParser.EmptyStatementContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="PascalParser.structuredStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitStructuredStatement([NotNull] PascalParser.StructuredStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.compoundStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitCompoundStatement([NotNull] PascalParser.CompoundStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.statements"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitStatements([NotNull] PascalParser.StatementsContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="PascalParser.conditionalStatement"/>.
 	/// </summary>
@@ -104,11 +176,11 @@ public interface IPascalParserVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitConditionalStatement([NotNull] PascalParser.ConditionalStatementContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.repetitiveStatement"/>.
+	/// Visit a parse tree produced by <see cref="PascalParser.ifStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitRepetitiveStatement([NotNull] PascalParser.RepetitiveStatementContext context);
+	Result VisitIfStatement([NotNull] PascalParser.IfStatementContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="PascalParser.caseStatement"/>.
 	/// </summary>
@@ -140,11 +212,17 @@ public interface IPascalParserVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitElsePart([NotNull] PascalParser.ElsePartContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.ifStatement"/>.
+	/// Visit a parse tree produced by <see cref="PascalParser.repetitiveStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitIfStatement([NotNull] PascalParser.IfStatementContext context);
+	Result VisitRepetitiveStatement([NotNull] PascalParser.RepetitiveStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="PascalParser.whileStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitWhileStatement([NotNull] PascalParser.WhileStatementContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="PascalParser.forStatement"/>.
 	/// </summary>
@@ -158,53 +236,11 @@ public interface IPascalParserVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitRepeatStatement([NotNull] PascalParser.RepeatStatementContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.whileStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitWhileStatement([NotNull] PascalParser.WhileStatementContext context);
-	/// <summary>
 	/// Visit a parse tree produced by <see cref="PascalParser.withStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitWithStatement([NotNull] PascalParser.WithStatementContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitExpression([NotNull] PascalParser.ExpressionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.simpleExpression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitSimpleExpression([NotNull] PascalParser.SimpleExpressionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.term"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitTerm([NotNull] PascalParser.TermContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.factor"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitFactor([NotNull] PascalParser.FactorContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.functionCall"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitFunctionCall([NotNull] PascalParser.FunctionCallContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.actualParameterList"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitActualParameterList([NotNull] PascalParser.ActualParameterListContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="PascalParser.unsignedConstant"/>.
 	/// </summary>
@@ -212,27 +248,9 @@ public interface IPascalParserVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitUnsignedConstant([NotNull] PascalParser.UnsignedConstantContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.setConstructor"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitSetConstructor([NotNull] PascalParser.SetConstructorContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.setGroup"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitSetGroup([NotNull] PascalParser.SetGroupContext context);
-	/// <summary>
 	/// Visit a parse tree produced by <see cref="PascalParser.valueTypecast"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitValueTypecast([NotNull] PascalParser.ValueTypecastContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="PascalParser.addressFactor"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitAddressFactor([NotNull] PascalParser.AddressFactorContext context);
 }

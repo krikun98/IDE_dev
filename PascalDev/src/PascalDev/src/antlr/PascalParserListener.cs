@@ -41,85 +41,15 @@ public interface IPascalParserListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitProgram([NotNull] PascalParser.ProgramContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.compoundStatement"/>.
+	/// Enter a parse tree produced by <see cref="PascalParser.identifier"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterCompoundStatement([NotNull] PascalParser.CompoundStatementContext context);
+	void EnterIdentifier([NotNull] PascalParser.IdentifierContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.compoundStatement"/>.
+	/// Exit a parse tree produced by <see cref="PascalParser.identifier"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitCompoundStatement([NotNull] PascalParser.CompoundStatementContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterStatement([NotNull] PascalParser.StatementContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitStatement([NotNull] PascalParser.StatementContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.body"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterBody([NotNull] PascalParser.BodyContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.body"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitBody([NotNull] PascalParser.BodyContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.simpleStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterSimpleStatement([NotNull] PascalParser.SimpleStatementContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.simpleStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitSimpleStatement([NotNull] PascalParser.SimpleStatementContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.assigmnentStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterAssigmnentStatement([NotNull] PascalParser.AssigmnentStatementContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.assigmnentStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitAssigmnentStatement([NotNull] PascalParser.AssigmnentStatementContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.assignment"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterAssignment([NotNull] PascalParser.AssignmentContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.assignment"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitAssignment([NotNull] PascalParser.AssignmentContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.procedureStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterProcedureStatement([NotNull] PascalParser.ProcedureStatementContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.procedureStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitProcedureStatement([NotNull] PascalParser.ProcedureStatementContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.gotoStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterGotoStatement([NotNull] PascalParser.GotoStatementContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.gotoStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitGotoStatement([NotNull] PascalParser.GotoStatementContext context);
+	void ExitIdentifier([NotNull] PascalParser.IdentifierContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="PascalParser.label"/>.
 	/// </summary>
@@ -131,6 +61,176 @@ public interface IPascalParserListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitLabel([NotNull] PascalParser.LabelContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStatement([NotNull] PascalParser.StatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStatement([NotNull] PascalParser.StatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.unlabelledStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterUnlabelledStatement([NotNull] PascalParser.UnlabelledStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.unlabelledStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitUnlabelledStatement([NotNull] PascalParser.UnlabelledStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.simpleStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSimpleStatement([NotNull] PascalParser.SimpleStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.simpleStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSimpleStatement([NotNull] PascalParser.SimpleStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.assignmentStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAssignmentStatement([NotNull] PascalParser.AssignmentStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.assignmentStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAssignmentStatement([NotNull] PascalParser.AssignmentStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.assignment"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAssignment([NotNull] PascalParser.AssignmentContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.assignment"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAssignment([NotNull] PascalParser.AssignmentContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.variable"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterVariable([NotNull] PascalParser.VariableContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.variable"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitVariable([NotNull] PascalParser.VariableContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterExpression([NotNull] PascalParser.ExpressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitExpression([NotNull] PascalParser.ExpressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.simpleExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSimpleExpression([NotNull] PascalParser.SimpleExpressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.simpleExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSimpleExpression([NotNull] PascalParser.SimpleExpressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.term"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterTerm([NotNull] PascalParser.TermContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.term"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitTerm([NotNull] PascalParser.TermContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.factor"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterFactor([NotNull] PascalParser.FactorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.factor"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitFactor([NotNull] PascalParser.FactorContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.setConstructor"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSetConstructor([NotNull] PascalParser.SetConstructorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.setConstructor"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSetConstructor([NotNull] PascalParser.SetConstructorContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.element"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterElement([NotNull] PascalParser.ElementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.element"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitElement([NotNull] PascalParser.ElementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.procedureStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterProcedureStatement([NotNull] PascalParser.ProcedureStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.procedureStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitProcedureStatement([NotNull] PascalParser.ProcedureStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.functionCall"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterFunctionCall([NotNull] PascalParser.FunctionCallContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.functionCall"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitFunctionCall([NotNull] PascalParser.FunctionCallContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.actualParameterList"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterActualParameterList([NotNull] PascalParser.ActualParameterListContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.actualParameterList"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitActualParameterList([NotNull] PascalParser.ActualParameterListContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.gotoStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterGotoStatement([NotNull] PascalParser.GotoStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.gotoStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitGotoStatement([NotNull] PascalParser.GotoStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.emptyStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterEmptyStatement([NotNull] PascalParser.EmptyStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.emptyStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitEmptyStatement([NotNull] PascalParser.EmptyStatementContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="PascalParser.structuredStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -140,6 +240,26 @@ public interface IPascalParserListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitStructuredStatement([NotNull] PascalParser.StructuredStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.compoundStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCompoundStatement([NotNull] PascalParser.CompoundStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.compoundStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCompoundStatement([NotNull] PascalParser.CompoundStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.statements"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStatements([NotNull] PascalParser.StatementsContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.statements"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStatements([NotNull] PascalParser.StatementsContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="PascalParser.conditionalStatement"/>.
 	/// </summary>
@@ -151,15 +271,15 @@ public interface IPascalParserListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitConditionalStatement([NotNull] PascalParser.ConditionalStatementContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.repetitiveStatement"/>.
+	/// Enter a parse tree produced by <see cref="PascalParser.ifStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterRepetitiveStatement([NotNull] PascalParser.RepetitiveStatementContext context);
+	void EnterIfStatement([NotNull] PascalParser.IfStatementContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.repetitiveStatement"/>.
+	/// Exit a parse tree produced by <see cref="PascalParser.ifStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitRepetitiveStatement([NotNull] PascalParser.RepetitiveStatementContext context);
+	void ExitIfStatement([NotNull] PascalParser.IfStatementContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="PascalParser.caseStatement"/>.
 	/// </summary>
@@ -211,15 +331,25 @@ public interface IPascalParserListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitElsePart([NotNull] PascalParser.ElsePartContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.ifStatement"/>.
+	/// Enter a parse tree produced by <see cref="PascalParser.repetitiveStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterIfStatement([NotNull] PascalParser.IfStatementContext context);
+	void EnterRepetitiveStatement([NotNull] PascalParser.RepetitiveStatementContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.ifStatement"/>.
+	/// Exit a parse tree produced by <see cref="PascalParser.repetitiveStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitIfStatement([NotNull] PascalParser.IfStatementContext context);
+	void ExitRepetitiveStatement([NotNull] PascalParser.RepetitiveStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="PascalParser.whileStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterWhileStatement([NotNull] PascalParser.WhileStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="PascalParser.whileStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitWhileStatement([NotNull] PascalParser.WhileStatementContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="PascalParser.forStatement"/>.
 	/// </summary>
@@ -241,16 +371,6 @@ public interface IPascalParserListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitRepeatStatement([NotNull] PascalParser.RepeatStatementContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.whileStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterWhileStatement([NotNull] PascalParser.WhileStatementContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.whileStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitWhileStatement([NotNull] PascalParser.WhileStatementContext context);
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="PascalParser.withStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -260,66 +380,6 @@ public interface IPascalParserListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitWithStatement([NotNull] PascalParser.WithStatementContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterExpression([NotNull] PascalParser.ExpressionContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitExpression([NotNull] PascalParser.ExpressionContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.simpleExpression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterSimpleExpression([NotNull] PascalParser.SimpleExpressionContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.simpleExpression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitSimpleExpression([NotNull] PascalParser.SimpleExpressionContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.term"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterTerm([NotNull] PascalParser.TermContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.term"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitTerm([NotNull] PascalParser.TermContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.factor"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterFactor([NotNull] PascalParser.FactorContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.factor"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitFactor([NotNull] PascalParser.FactorContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.functionCall"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterFunctionCall([NotNull] PascalParser.FunctionCallContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.functionCall"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitFunctionCall([NotNull] PascalParser.FunctionCallContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.actualParameterList"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterActualParameterList([NotNull] PascalParser.ActualParameterListContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.actualParameterList"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitActualParameterList([NotNull] PascalParser.ActualParameterListContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="PascalParser.unsignedConstant"/>.
 	/// </summary>
@@ -331,26 +391,6 @@ public interface IPascalParserListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitUnsignedConstant([NotNull] PascalParser.UnsignedConstantContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.setConstructor"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterSetConstructor([NotNull] PascalParser.SetConstructorContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.setConstructor"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitSetConstructor([NotNull] PascalParser.SetConstructorContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.setGroup"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterSetGroup([NotNull] PascalParser.SetGroupContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.setGroup"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitSetGroup([NotNull] PascalParser.SetGroupContext context);
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="PascalParser.valueTypecast"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -360,14 +400,4 @@ public interface IPascalParserListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitValueTypecast([NotNull] PascalParser.ValueTypecastContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="PascalParser.addressFactor"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterAddressFactor([NotNull] PascalParser.AddressFactorContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="PascalParser.addressFactor"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitAddressFactor([NotNull] PascalParser.AddressFactorContext context);
 }
