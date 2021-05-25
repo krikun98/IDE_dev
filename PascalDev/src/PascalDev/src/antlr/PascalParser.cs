@@ -630,9 +630,11 @@ public partial class PascalParser : Parser {
 
 	public partial class VariableContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode AT() { return GetToken(PascalParser.AT, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode[] Identifier() { return GetTokens(PascalParser.Identifier); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode Identifier(int i) {
-			return GetToken(PascalParser.Identifier, i);
+		[System.Diagnostics.DebuggerNonUserCode] public IdentifierContext[] identifier() {
+			return GetRuleContexts<IdentifierContext>();
+		}
+		[System.Diagnostics.DebuggerNonUserCode] public IdentifierContext identifier(int i) {
+			return GetRuleContext<IdentifierContext>(i);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode[] LBKT() { return GetTokens(PascalParser.LBKT); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LBKT(int i) {
@@ -643,6 +645,10 @@ public partial class PascalParser : Parser {
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
+		}
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode[] RBKT() { return GetTokens(PascalParser.RBKT); }
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode RBKT(int i) {
+			return GetToken(PascalParser.RBKT, i);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode[] LBKT2() { return GetTokens(PascalParser.LBKT2); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LBKT2(int i) {
@@ -700,13 +706,13 @@ public partial class PascalParser : Parser {
 				State = 104;
 				Match(AT);
 				State = 105;
-				Match(Identifier);
+				identifier();
 				}
 				break;
 			case Identifier:
 				{
 				State = 106;
-				Match(Identifier);
+				identifier();
 				}
 				break;
 			default:
@@ -744,7 +750,7 @@ public partial class PascalParser : Parser {
 							_la = TokenStream.LA(1);
 						}
 						State = 118;
-						Match(LBKT);
+						Match(RBKT);
 						}
 						break;
 					case LBKT2:
@@ -778,7 +784,7 @@ public partial class PascalParser : Parser {
 						State = 131;
 						Match(DOT);
 						State = 132;
-						Match(Identifier);
+						identifier();
 						}
 						break;
 					case POINTER:
@@ -1338,7 +1344,9 @@ public partial class PascalParser : Parser {
 	}
 
 	public partial class ProcedureStatementContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode Identifier() { return GetToken(PascalParser.Identifier, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public IdentifierContext identifier() {
+			return GetRuleContext<IdentifierContext>(0);
+		}
 		[System.Diagnostics.DebuggerNonUserCode] public ActualParameterListContext actualParameterList() {
 			return GetRuleContext<ActualParameterListContext>(0);
 		}
@@ -1374,7 +1382,7 @@ public partial class PascalParser : Parser {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 204;
-			Match(Identifier);
+			identifier();
 			State = 206;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
@@ -1399,7 +1407,9 @@ public partial class PascalParser : Parser {
 	}
 
 	public partial class FunctionCallContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode Identifier() { return GetToken(PascalParser.Identifier, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public IdentifierContext identifier() {
+			return GetRuleContext<IdentifierContext>(0);
+		}
 		[System.Diagnostics.DebuggerNonUserCode] public ActualParameterListContext actualParameterList() {
 			return GetRuleContext<ActualParameterListContext>(0);
 		}
@@ -1435,7 +1445,7 @@ public partial class PascalParser : Parser {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 208;
-			Match(Identifier);
+			identifier();
 			State = 210;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
@@ -2534,8 +2544,8 @@ public partial class PascalParser : Parser {
 
 	public partial class ForStatementContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode For() { return GetToken(PascalParser.For, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public VariableContext variable() {
-			return GetRuleContext<VariableContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public IdentifierContext identifier() {
+			return GetRuleContext<IdentifierContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ASSIGN() { return GetToken(PascalParser.ASSIGN, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ExpressionContext[] expression() {
@@ -2589,7 +2599,7 @@ public partial class PascalParser : Parser {
 				State = 314;
 				Match(For);
 				State = 315;
-				variable();
+				identifier();
 				State = 316;
 				Match(ASSIGN);
 				State = 317;
@@ -2617,7 +2627,7 @@ public partial class PascalParser : Parser {
 				State = 323;
 				Match(For);
 				State = 324;
-				variable();
+				identifier();
 				State = 325;
 				Match(In);
 				State = 326;
@@ -2843,7 +2853,9 @@ public partial class PascalParser : Parser {
 	}
 
 	public partial class ValueTypecastContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode Identifier() { return GetToken(PascalParser.Identifier, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public IdentifierContext identifier() {
+			return GetRuleContext<IdentifierContext>(0);
+		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LBRC() { return GetToken(PascalParser.LBRC, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
@@ -2880,7 +2892,7 @@ public partial class PascalParser : Parser {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 351;
-			Match(Identifier);
+			identifier();
 			State = 352;
 			Match(LBRC);
 			State = 353;
@@ -3020,15 +3032,15 @@ public partial class PascalParser : Parser {
 		'\x65', '\x5', '\x12', '\n', '\x2', '\x65', '\x66', '\x5', '\x10', '\t', 
 		'\x2', '\x66', 'g', '\x5', '\x14', '\v', '\x2', 'g', '\xF', '\x3', '\x2', 
 		'\x2', '\x2', 'h', 'i', '\t', '\x2', '\x2', '\x2', 'i', '\x11', '\x3', 
-		'\x2', '\x2', '\x2', 'j', 'k', '\a', '\x11', '\x2', '\x2', 'k', 'n', '\a', 
-		':', '\x2', '\x2', 'l', 'n', '\a', ':', '\x2', '\x2', 'm', 'j', '\x3', 
+		'\x2', '\x2', '\x2', 'j', 'k', '\a', '\x11', '\x2', '\x2', 'k', 'n', '\x5', 
+		'\x4', '\x3', '\x2', 'l', 'n', '\x5', '\x4', '\x3', '\x2', 'm', 'j', '\x3', 
 		'\x2', '\x2', '\x2', 'm', 'l', '\x3', '\x2', '\x2', '\x2', 'n', '\x8A', 
 		'\x3', '\x2', '\x2', '\x2', 'o', 'p', '\a', '\v', '\x2', '\x2', 'p', 'u', 
 		'\x5', '\x14', '\v', '\x2', 'q', 'r', '\a', '\xF', '\x2', '\x2', 'r', 
 		't', '\x5', '\x14', '\v', '\x2', 's', 'q', '\x3', '\x2', '\x2', '\x2', 
 		't', 'w', '\x3', '\x2', '\x2', '\x2', 'u', 's', '\x3', '\x2', '\x2', '\x2', 
 		'u', 'v', '\x3', '\x2', '\x2', '\x2', 'v', 'x', '\x3', '\x2', '\x2', '\x2', 
-		'w', 'u', '\x3', '\x2', '\x2', '\x2', 'x', 'y', '\a', '\v', '\x2', '\x2', 
+		'w', 'u', '\x3', '\x2', '\x2', '\x2', 'x', 'y', '\a', '\f', '\x2', '\x2', 
 		'y', '\x89', '\x3', '\x2', '\x2', '\x2', 'z', '{', '\a', '\r', '\x2', 
 		'\x2', '{', '\x80', '\x5', '\x14', '\v', '\x2', '|', '}', '\a', '\xF', 
 		'\x2', '\x2', '}', '\x7F', '\x5', '\x14', '\v', '\x2', '~', '|', '\x3', 
@@ -3037,7 +3049,7 @@ public partial class PascalParser : Parser {
 		'\x2', '\x81', '\x83', '\x3', '\x2', '\x2', '\x2', '\x82', '\x80', '\x3', 
 		'\x2', '\x2', '\x2', '\x83', '\x84', '\a', '\r', '\x2', '\x2', '\x84', 
 		'\x89', '\x3', '\x2', '\x2', '\x2', '\x85', '\x86', '\a', '\x12', '\x2', 
-		'\x2', '\x86', '\x89', '\a', ':', '\x2', '\x2', '\x87', '\x89', '\a', 
+		'\x2', '\x86', '\x89', '\x5', '\x4', '\x3', '\x2', '\x87', '\x89', '\a', 
 		'\x13', '\x2', '\x2', '\x88', 'o', '\x3', '\x2', '\x2', '\x2', '\x88', 
 		'z', '\x3', '\x2', '\x2', '\x2', '\x88', '\x85', '\x3', '\x2', '\x2', 
 		'\x2', '\x88', '\x87', '\x3', '\x2', '\x2', '\x2', '\x89', '\x8C', '\x3', 
@@ -3091,21 +3103,21 @@ public partial class PascalParser : Parser {
 		'\xCA', '\xCB', '\a', '\x10', '\x2', '\x2', '\xCB', '\xCD', '\x5', '\x14', 
 		'\v', '\x2', '\xCC', '\xCA', '\x3', '\x2', '\x2', '\x2', '\xCC', '\xCD', 
 		'\x3', '\x2', '\x2', '\x2', '\xCD', '\x1F', '\x3', '\x2', '\x2', '\x2', 
-		'\xCE', '\xD0', '\a', ':', '\x2', '\x2', '\xCF', '\xD1', '\x5', '$', '\x13', 
-		'\x2', '\xD0', '\xCF', '\x3', '\x2', '\x2', '\x2', '\xD0', '\xD1', '\x3', 
-		'\x2', '\x2', '\x2', '\xD1', '!', '\x3', '\x2', '\x2', '\x2', '\xD2', 
-		'\xD4', '\a', ':', '\x2', '\x2', '\xD3', '\xD5', '\x5', '$', '\x13', '\x2', 
-		'\xD4', '\xD3', '\x3', '\x2', '\x2', '\x2', '\xD4', '\xD5', '\x3', '\x2', 
-		'\x2', '\x2', '\xD5', '#', '\x3', '\x2', '\x2', '\x2', '\xD6', '\xDF', 
-		'\a', '\b', '\x2', '\x2', '\xD7', '\xDC', '\x5', '\x14', '\v', '\x2', 
-		'\xD8', '\xD9', '\a', '\xF', '\x2', '\x2', '\xD9', '\xDB', '\x5', '\x14', 
-		'\v', '\x2', '\xDA', '\xD8', '\x3', '\x2', '\x2', '\x2', '\xDB', '\xDE', 
-		'\x3', '\x2', '\x2', '\x2', '\xDC', '\xDA', '\x3', '\x2', '\x2', '\x2', 
-		'\xDC', '\xDD', '\x3', '\x2', '\x2', '\x2', '\xDD', '\xE0', '\x3', '\x2', 
-		'\x2', '\x2', '\xDE', '\xDC', '\x3', '\x2', '\x2', '\x2', '\xDF', '\xD7', 
-		'\x3', '\x2', '\x2', '\x2', '\xDF', '\xE0', '\x3', '\x2', '\x2', '\x2', 
-		'\xE0', '\xE1', '\x3', '\x2', '\x2', '\x2', '\xE1', '\xE2', '\a', '\t', 
-		'\x2', '\x2', '\xE2', '%', '\x3', '\x2', '\x2', '\x2', '\xE3', '\xE4', 
+		'\xCE', '\xD0', '\x5', '\x4', '\x3', '\x2', '\xCF', '\xD1', '\x5', '$', 
+		'\x13', '\x2', '\xD0', '\xCF', '\x3', '\x2', '\x2', '\x2', '\xD0', '\xD1', 
+		'\x3', '\x2', '\x2', '\x2', '\xD1', '!', '\x3', '\x2', '\x2', '\x2', '\xD2', 
+		'\xD4', '\x5', '\x4', '\x3', '\x2', '\xD3', '\xD5', '\x5', '$', '\x13', 
+		'\x2', '\xD4', '\xD3', '\x3', '\x2', '\x2', '\x2', '\xD4', '\xD5', '\x3', 
+		'\x2', '\x2', '\x2', '\xD5', '#', '\x3', '\x2', '\x2', '\x2', '\xD6', 
+		'\xDF', '\a', '\b', '\x2', '\x2', '\xD7', '\xDC', '\x5', '\x14', '\v', 
+		'\x2', '\xD8', '\xD9', '\a', '\xF', '\x2', '\x2', '\xD9', '\xDB', '\x5', 
+		'\x14', '\v', '\x2', '\xDA', '\xD8', '\x3', '\x2', '\x2', '\x2', '\xDB', 
+		'\xDE', '\x3', '\x2', '\x2', '\x2', '\xDC', '\xDA', '\x3', '\x2', '\x2', 
+		'\x2', '\xDC', '\xDD', '\x3', '\x2', '\x2', '\x2', '\xDD', '\xE0', '\x3', 
+		'\x2', '\x2', '\x2', '\xDE', '\xDC', '\x3', '\x2', '\x2', '\x2', '\xDF', 
+		'\xD7', '\x3', '\x2', '\x2', '\x2', '\xDF', '\xE0', '\x3', '\x2', '\x2', 
+		'\x2', '\xE0', '\xE1', '\x3', '\x2', '\x2', '\x2', '\xE1', '\xE2', '\a', 
+		'\t', '\x2', '\x2', '\xE2', '%', '\x3', '\x2', '\x2', '\x2', '\xE3', '\xE4', 
 		'\a', ')', '\x2', '\x2', '\xE4', '\xE5', '\x5', '\x6', '\x4', '\x2', '\xE5', 
 		'\'', '\x3', '\x2', '\x2', '\x2', '\xE6', '\xE7', '\x3', '\x2', '\x2', 
 		'\x2', '\xE7', ')', '\x3', '\x2', '\x2', '\x2', '\xE8', '\xED', '\x5', 
@@ -3169,13 +3181,13 @@ public partial class PascalParser : Parser {
 		'\x139', '\x5', '\x14', '\v', '\x2', '\x139', '\x13A', '\a', '\x35', '\x2', 
 		'\x2', '\x13A', '\x13B', '\x5', '\b', '\x5', '\x2', '\x13B', '\x41', '\x3', 
 		'\x2', '\x2', '\x2', '\x13C', '\x13D', '\a', '\x32', '\x2', '\x2', '\x13D', 
-		'\x13E', '\x5', '\x12', '\n', '\x2', '\x13E', '\x13F', '\a', '\x14', '\x2', 
+		'\x13E', '\x5', '\x4', '\x3', '\x2', '\x13E', '\x13F', '\a', '\x14', '\x2', 
 		'\x2', '\x13F', '\x140', '\x5', '\x14', '\v', '\x2', '\x140', '\x141', 
 		'\t', '\x5', '\x2', '\x2', '\x141', '\x142', '\x5', '\x14', '\v', '\x2', 
 		'\x142', '\x143', '\a', '\x35', '\x2', '\x2', '\x143', '\x144', '\x5', 
 		'\b', '\x5', '\x2', '\x144', '\x14D', '\x3', '\x2', '\x2', '\x2', '\x145', 
-		'\x146', '\a', '\x32', '\x2', '\x2', '\x146', '\x147', '\x5', '\x12', 
-		'\n', '\x2', '\x147', '\x148', '\a', '\x1A', '\x2', '\x2', '\x148', '\x149', 
+		'\x146', '\a', '\x32', '\x2', '\x2', '\x146', '\x147', '\x5', '\x4', '\x3', 
+		'\x2', '\x147', '\x148', '\a', '\x1A', '\x2', '\x2', '\x148', '\x149', 
 		'\x5', '\x14', '\v', '\x2', '\x149', '\x14A', '\a', '\x35', '\x2', '\x2', 
 		'\x14A', '\x14B', '\x5', '\b', '\x5', '\x2', '\x14B', '\x14D', '\x3', 
 		'\x2', '\x2', '\x2', '\x14C', '\x13C', '\x3', '\x2', '\x2', '\x2', '\x14C', 
@@ -3192,10 +3204,10 @@ public partial class PascalParser : Parser {
 		'\x159', '\x3', '\x2', '\x2', '\x2', '\x15C', '\x15D', '\a', '\x35', '\x2', 
 		'\x2', '\x15D', '\x15E', '\x5', '\b', '\x5', '\x2', '\x15E', 'G', '\x3', 
 		'\x2', '\x2', '\x2', '\x15F', '\x160', '\t', '\x6', '\x2', '\x2', '\x160', 
-		'I', '\x3', '\x2', '\x2', '\x2', '\x161', '\x162', '\a', ':', '\x2', '\x2', 
-		'\x162', '\x163', '\a', '\b', '\x2', '\x2', '\x163', '\x164', '\x5', '\x14', 
-		'\v', '\x2', '\x164', '\x165', '\a', '\t', '\x2', '\x2', '\x165', 'K', 
-		'\x3', '\x2', '\x2', '\x2', '#', 'X', '\\', '\x62', 'm', 'u', '\x80', 
+		'I', '\x3', '\x2', '\x2', '\x2', '\x161', '\x162', '\x5', '\x4', '\x3', 
+		'\x2', '\x162', '\x163', '\a', '\b', '\x2', '\x2', '\x163', '\x164', '\x5', 
+		'\x14', '\v', '\x2', '\x164', '\x165', '\a', '\t', '\x2', '\x2', '\x165', 
+		'K', '\x3', '\x2', '\x2', '\x2', '#', 'X', '\\', '\x62', 'm', 'u', '\x80', 
 		'\x88', '\x8A', '\x90', '\x97', '\x9F', '\xAF', '\xB7', '\xC2', '\xC7', 
 		'\xCC', '\xD0', '\xD4', '\xDC', '\xDF', '\xEC', '\xF7', '\xFB', '\xFF', 
 		'\x107', '\x111', '\x115', '\x118', '\x121', '\x12A', '\x135', '\x14C', 

@@ -28,10 +28,10 @@ simpleStatement
 assignmentStatement: variable assignment expression;
 assignment: ASSIGN | PLUSASSIGN | MINUSASSIGN | MULTASSIGN | DIVASSIGN;
 
-variable: (AT Identifier | Identifier) 
-    (LBKT expression (COMMA expression)* LBKT | 
+variable: (AT identifier | identifier) 
+    (LBKT expression (COMMA expression)* RBKT | 
     LBKT2 expression (COMMA expression)* LBKT2 | 
-    DOT Identifier | POINTER)*;
+    DOT identifier | POINTER)*;
     
 expression: simpleExpression (Comparison simpleExpression)?;
     
@@ -52,9 +52,9 @@ setConstructor: LBKT element (COMMA element)* RBKT |
     LBKT2 element (COMMA element)* RBKT2 ;
 element: expression (DOTS expression)?;
 
-procedureStatement: Identifier actualParameterList?;
+procedureStatement: identifier actualParameterList?;
 
-functionCall: Identifier actualParameterList?;
+functionCall: identifier actualParameterList?;
 actualParameterList: LBRC (expression (COMMA expression)*)? RBRC;
 
 gotoStatement: Goto label;
@@ -77,8 +77,8 @@ elsePart: SEMICOLON (Else | Otherwise) statements;
 repetitiveStatement: forStatement | repeatStatement | whileStatement;
 
 whileStatement: While expression Do statement;
-forStatement: For variable ASSIGN expression (To | Downto) expression Do statement
-            | For variable In expression Do statement;
+forStatement: For identifier ASSIGN expression (To | Downto) expression Do statement
+            | For identifier In expression Do statement;
 repeatStatement: Repeat statements Until expression;
 
 withStatement: With variable (COMMA variable)* Do statement;
@@ -86,4 +86,4 @@ withStatement: With variable (COMMA variable)* Do statement;
 
 unsignedConstant: Number | CharacterString | Nil;
 
-valueTypecast: Identifier LBRC expression RBRC;
+valueTypecast: identifier LBRC expression RBRC;

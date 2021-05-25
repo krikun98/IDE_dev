@@ -1,4 +1,3 @@
-
 begin
    n := 0;
    (* loop to show you can use chars to index arrays *)
