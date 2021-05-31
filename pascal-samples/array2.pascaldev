@@ -1,0 +1,12 @@
+begin
+   n := 0;
+   (* loop to show you can use chars to index arrays *)
+   for i := 'a' to 'e' do
+   begin
+      n := n + 5;
+      a[i] := n;       
+   //
+   //end;
+    end;
+    writeln;
+end

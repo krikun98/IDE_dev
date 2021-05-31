@@ -1,0 +1,9 @@
+begin
+   writeln('in main');
+   i := 1;
+   j := 2;
+   k := 3;
+   writeln('i=', i, '  j=', j, '  k=', k);
+   procA;
+   procB;
+end
